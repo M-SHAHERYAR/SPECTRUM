@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<BUTTON onclick="sendMessage()" style="width: 200px; height: 45px">SendMessage</BUTTON>
+
+<script>
+    var conn = new WebSocket('ws://localhost:8080');
+
+    conn.onopen = function(event) {
+
+        console.log("WebSocket is open now.");
+        conn.send('MYSERVEREMAIL=muhammad.iftikhar.aftab@gmail.com');
+    };
+
+    conn.onmessage = function(e) {
+        console.log(e.data);
+    };
+
+
+    function sendMessage() {
+        conn.send('TO=shehryar@gmail.com;MSG=This is my test message');
+    }
+
+</script>
+
+</body>
+</html>
