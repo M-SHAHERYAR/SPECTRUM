@@ -45,7 +45,7 @@ class Chat implements MessageComponentInterface {
 
         $servername = "localhost";
         $username = "root";
-        $password = "iftikhar@1";
+        $password = "Password@1";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password);
